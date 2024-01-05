@@ -51,7 +51,7 @@ export default function HeroSection() {
                 </div>
                 <div className='phone-container flex flex-col gap-5 justify-center px-10'>
                     <h1 className='heading'>Social Insure Here We Will Put A Heading, Mission Or Moto For The Brand.</h1>
-                    <p className='des'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p className='des'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     <div className='flex gap-10 items-center'>
                       <Link href='/' className='cta-button'>Get Notified</Link>
                       <Link href='/' className='email '>Email Us</Link>
