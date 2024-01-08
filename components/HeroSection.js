@@ -111,7 +111,7 @@ export default function HeroSection() {
                       {isModalOpen && (
                       <div className="modal-overlay">
                         <div className="modal">
-                          <button className='border  p-1 hover:bg-red-400' onClick={closeModal}>Close X</button>
+                          <button className='border  p-1 hover:bg-red-400 hover:text-white' onClick={closeModal}>Close X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
                           <form onSubmit={handleEmailSubmit}>
                               <input className='border' 
