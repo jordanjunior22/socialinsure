@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
     const [name, setName] = useState('');
@@ -98,11 +99,12 @@ export default function Footer() {
       };
 
     return (
-    <section className='flex res_footer'>
+    <section id='footer' className='flex res_footer'>
         <div className='w-1/2 black-color-bg left_footer'>
             <div className='p-8 flex justify-start black-color-bg white-color-text items-end'>
                 <div className='logo-container'>
-                  <img src='/logonobg.png' className='logo'/>
+                <Link href='/'><img src='/logonobg.png' className='logo'/></Link>
+
                 </div>
                 <div className=' flex gap-5 social_media'>
                     

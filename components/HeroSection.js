@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react';
-
+import SmoothScroll from './SmoothScoll';
  
 export default function HeroSection() {
   const [SideNavOpen, setSideNavOpen] = useState(false);
@@ -61,6 +61,9 @@ export default function HeroSection() {
   const closeModal = () => {
     setModalOpen(false);
   };
+  const handleScrollToSection = (sectionId) => {
+    SmoothScroll(sectionId);
+  };
 
   return (
     <section className='w-full relative overflow-hidden'>
@@ -68,7 +71,7 @@ export default function HeroSection() {
 
             <div className='ps-8 flex flex-col gap-1 w-1/2  white-color-text pb-16 left-side'>
                 <div className='logo-container'>
-                  <img src='/logonobg.png' className='logo'/>
+                <Link href='/'><img src='/logonobg.png' className='logo'/></Link>
                 </div>
                 <div className='phone-container'>
                     <img src='/phone.png' alt='phone'/>
@@ -78,7 +81,8 @@ export default function HeroSection() {
             <div className='pe-8 flex flex-col gap-1 w-1/2 white-color-bg black-color-text pb-16 right-side'>
                 <div className='flex justify-end ps-8 div-container '>
                   <div className='logo-container black-logo'>
-                    <img src='/logonobg2.png' className='logo'/>
+                    <Link href='/'><img src='/logonobg2.png' className='logo'/></Link>
+                    
                   </div>
                   {/* <div className='flex gap-10 lg:gap-4 nav-links'>
                     <Link href='/'>Home</Link>
@@ -87,7 +91,7 @@ export default function HeroSection() {
                     <Link href='/'>Contact</Link>
                   </div> */}
                   <div className='nav-links'>
-                    <Link href='/' className='cta-button'>Get Notified</Link>
+                    <Link onClick={() => handleScrollToSection('footer')} href='/#footer' className='cta-button'>Get Notified</Link>
                   </div>
 {/* 
                   <div className='menu-icon' onClick={handleOpen}>
