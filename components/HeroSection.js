@@ -14,6 +14,44 @@ export default function HeroSection() {
   function handleOpen(){
     setSideNavOpen(true);
   }
+  const [email, setEmail] = useState('');
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleEmailSubmit = async (event) => {
+    event.preventDefault();
+
+    //console.log('Email before fetch:', email);
+
+    try {
+      const response = await fetch('/api/mailchimp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+      //console.log(data); // Log the response from the API
+
+      // Optionally, you can show a success message to the user
+      if (response.ok) {
+        alert('Subscribed successfully!');
+        setEmail('');
+      } else if (data.message === 'Already Subscribed') { 
+        alert('Email is already subscribed.'); 
+      }
+        else {
+        alert('An error occurred. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -71,8 +109,15 @@ export default function HeroSection() {
                         <div className="modal">
                           <button className='border  p-1 hover:bg-red-400' onClick={closeModal}>Close X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
-                          <form>
-                              <input className='border' type='email'/>
+                          <form onSubmit={handleEmailSubmit}>
+                              <input className='border' 
+                                type='email'
+                                id="email"
+                                name="email"
+                                value={email}
+                                onChange={handleEmailChange}
+                                required
+                                />
                               <button type='submit' className='cta-button-submit'>Let&apos;s Go</button>
                           </form>
                         </div>
