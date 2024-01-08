@@ -15,9 +15,17 @@ export default function Footer() {
         // Redirect the user to the specified link
         window.open('https://www.facebook.com/profile.php?id=100083733096698', '_blank'); // Replace with your desired link
       };
+      const GoInstagram = () => {
+        // Redirect the user to the specified link
+        window.open('https://www.instagram.com/pchhservicesllc/', '_blank'); // Replace with your desired link
+      };
         const GoTwitter = () => {
         // Redirect the user to the specified link
         window.open('https://twitter.com/pchhservicesllc', '_blank'); // Replace with your desired link
+      };
+      const GoTiktok = () => {
+        // Redirect the user to the specified link
+        window.open('https://www.tiktok.com/@pchhservicesllc', '_blank'); // Replace with your desired link
       };
 
     const handleEmailChange = (event) => {
@@ -97,8 +105,11 @@ export default function Footer() {
                   <img src='/logonobg.png' className='logo'/>
                 </div>
                 <div className=' flex gap-5 social_media'>
-                    <img onClick={GoTwitter} className='w-6 cursor-pointer' src='/twitter.png' alt='twitter'/>
+                    
                     <img onClick={GoFacebook} className='w-6 cursor-pointer' src='/facebook.png' alt='facebook'/>
+                    <img onClick={GoInstagram} className='w-6 cursor-pointer' src='/instagram.png' alt='instagram'/>
+                    <img onClick={GoTwitter} className='w-6 cursor-pointer' src='/twitter.png' alt='twitter'/>
+                    <img onClick={GoTiktok} className='w-6 cursor-pointer' src='/tiktok.png' alt='tiktok'/>
                     <img onClick={GoEmail} className='w-6 cursor-pointer' src='/email.png' alt='email'/>
                 </div>
             </div>
