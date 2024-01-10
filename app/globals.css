@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600&display=swap');
 :root {
   --black-color: #3E3E3E;
   --white-color: #EEEEEE;
@@ -65,7 +65,7 @@ a{
   padding: 0.5rem 1.5rem;
   font-size: 0.9rem;
   border-radius: 8px;
-  transition : background-color 0.5s ease-in-out;
+  transition : background-color 0.3s ease-in-out;
   font-weight: 700;
 }
 .modal-overlay {
@@ -84,10 +84,11 @@ a{
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
-  width: 700px;
+  width: 60%;
   border-radius: 5px;
+
 }
 .cta-button-submit{
   background-color: var(--cta-color);
@@ -95,7 +96,7 @@ a{
   padding: 0.5rem 1.5rem;
   font-size: 0.9rem;
   font-weight: 700;
-  transition : background-color 0.5s ease-in-out;
+  transition : background-color 0.3s ease-in-out;
 }
 .cta-button:hover{
   background-color: red;
@@ -103,16 +104,38 @@ a{
 .cta-button-submit:hover{
   background-color: red;
 }
-input{
-  padding: 0.4rem 0.5rem;
-  outline: none;
-  width: 70%;
-  margin-top: 1rem;
+.hover-on:hover{
+  color: red;
 }
-
-.text_box{
-  width: 70%;
+.button-hieght{
+  height: 36px;
+}
+input{
+  padding: 0.3rem 1rem;
+  height: 100%;
+  width: 100%;
   outline: none;
+  border: 1px solid lightgrey;
+}
+.something{
+color: rgba(62, 62, 62, 0.70);
+text-align: center;
+font-family: 'Jura', sans-serif;
+font-size:1rem;
+}
+.enter_{
+  color: rgba(62, 62, 62, 0.70);
+  font-family: Georama;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text_box{
+  outline: none;
+  height: 255px;
+  padding: 0.3rem 1rem;
+
 }
 .heading{
   /* background: #3E3E3E;
@@ -205,6 +228,7 @@ line-height: normal;
   background-image: url('/texture.png');
 }
 @media (max-width: 1023px) {
+
   .div-container{
     justify-content: flex-end;
   }
@@ -222,7 +246,28 @@ line-height: normal;
   }
 }
 @media (max-width: 768px) {
-
+  .modal {
+    width: 80%;
+  }
+  .gapflex{
+    gap:5px
+  }
+  .mobile-respons-{
+    width: 100%;
+  }
+  .f-l-name-mobile-res{
+    flex-direction: column;
+    
+  }
+  .input-mobile-res-footer{
+    flex-direction: column;
+  }
+  input{
+    width: 100%;
+  }
+  .something{
+    width: 100%;
+  }
   .res_footer{
     flex-direction: column;
   }
@@ -262,8 +307,15 @@ line-height: normal;
   .right-side{
     width: 100%;
   }
+  .input-email-res-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 @media (max-width:425px){
+
   .box{
     flex-direction: column-reverse;
     align-items: center;
@@ -278,6 +330,9 @@ line-height: normal;
     font-size: 0.7rem;
   }
   .cta-button{
+    font-size: 0.6rem;
+  }
+  .cta-button-submit{
     font-size: 0.6rem;
   }
   .email{

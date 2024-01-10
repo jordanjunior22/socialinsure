@@ -2,18 +2,20 @@
 import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react';
-import SmoothScroll from './SmoothScoll';
+import ThankYouPopup from './ThankYouPopup';
  
 export default function HeroSection() {
   const [SideNavOpen, setSideNavOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+
+
   const Heading = 'Social Insure';
   const description = 'A web and mobile platform to social insure the live and dreams of those you love and care about.';
-  function handleClose(){
-    setSideNavOpen(false);
-  } 
-  function handleOpen(){
-    setSideNavOpen(true);
-  }
+
+
+
+
   const [email, setEmail] = useState('');
 
   const handleEmailChange = (event) => {
@@ -39,7 +41,9 @@ export default function HeroSection() {
 
       // Optionally, you can show a success message to the user
       if (response.ok) {
-        alert('Subscribed successfully!');
+        // alert('Subscribed successfully!');
+        setModalOpen(false);
+        setShowPopup(true);
         setEmail('');
       } else if (data.message === 'Already Subscribed') { 
         alert('Email is already subscribed.'); 
@@ -61,12 +65,15 @@ export default function HeroSection() {
   const closeModal = () => {
     setModalOpen(false);
   };
-  const handleScrollToSection = (sectionId) => {
-    SmoothScroll(sectionId);
-  };
 
   return (
     <section className='w-full relative overflow-hidden'>
+
+        <ThankYouPopup 
+        isOpen={showPopup} 
+        onClose={() => setShowPopup(false)}
+    />
+          
         <div className='flex black-color-bg'>
 
             <div className='ps-8 flex flex-col gap-1 w-1/2  white-color-text pb-16 left-side'>
@@ -91,7 +98,7 @@ export default function HeroSection() {
                     <Link href='/'>Contact</Link>
                   </div> */}
                   <div className='nav-links'>
-                    <Link onClick={() => handleScrollToSection('footer')} href='/#footer' className='cta-button'>Get Notified</Link>
+                    <button className='cta-button' onClick={openModal}>Get Notified</button>
                   </div>
 {/* 
                   <div className='menu-icon' onClick={handleOpen}>
@@ -103,26 +110,43 @@ export default function HeroSection() {
 
                 </div>
                 <div className='phone-container flex flex-col gap-3 text-center justify-center items-center px-10'>
-                    <h1 className='heading cta-color-text'>{Heading}</h1>
+                    <h1 className='heading cta-color-text hover-on'>{Heading}</h1>
                     <h2 className='font-bold text-lg'>Community Support Made Easy</h2>
                     <p className='des'>{description}</p>
                     <div className='flex gap-10 items-center '>
                       <button onClick={openModal} className='cta-button'>Join The Waiting List</button>
                       {isModalOpen && (
-                      <div className="modal-overlay">
-                        <div className="modal">
-                          <button className='border  p-1 hover:bg-red-400 hover:text-white' onClick={closeModal}>Close X</button>
+                      <div className="modal-overlay z-50">
+                        <div className="modal relative">
+                          <button className='border  px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
-                          <form onSubmit={handleEmailSubmit}>
-                              <input className='border' 
-                                type='email'
-                                id="email"
-                                name="email"
-                                value={email}
-                                onChange={handleEmailChange}
-                                required
+                          <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1 p-6'>
+                              <div className='flex gap-2 pb-3 f-l-name-mobile-res'>
+                                <input
+                                type='text'
+                                placeholder='Last Name'
+                                
                                 />
-                              <button type='submit' className='cta-button-submit'>Let&apos;s Go</button>
+                                <input
+                                type='text'
+                                placeholder='First Name'
+                                
+                                />
+                              </div>
+                              <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
+                                <input className='border ' 
+                                  type='email'
+                                  id="email"
+                                  name="email"
+                                  placeholder='Email'
+                                  value={email}
+                                  onChange={handleEmailChange}
+                                  required
+                                  
+                                  />
+                                <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
+                              </div>
+
                           </form>
                         </div>
                       </div>

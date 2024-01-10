@@ -2,11 +2,22 @@
 import React from 'react'
 import { useState } from 'react';
 import Link from 'next/link';
+import ThankYouPopup from './ThankYouPopup';
 
 export default function Footer() {
+  const [showPopup, setShowPopup] = useState(false);
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
     const [email, setEmail] = useState('');
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => {
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
 
     const GoEmail = () => {
         // Redirect the user to the specified link
@@ -52,7 +63,9 @@ export default function Footer() {
   
         // Optionally, you can show a success message to the user
         if (response.ok) {
-          alert('Subscribed successfully!');
+          // alert('Subscribed successfully!');
+          setModalOpen(false);
+          setShowPopup(true);
           setEmail('');
         } else if (data.message === 'Already Subscribed') { 
           alert('Email is already subscribed.'); 
@@ -100,8 +113,12 @@ export default function Footer() {
 
     return (
     <section id='footer' className='flex res_footer'>
-        <div className='w-1/2 black-color-bg left_footer'>
-            <div className='p-8 flex justify-start black-color-bg white-color-text items-end'>
+              <ThankYouPopup 
+                isOpen={showPopup} 
+                onClose={() => setShowPopup(false)}
+            />
+        <div className='w-1/2 black-color-bg left_footer p-6'>
+            <div className='p-8 flex justify-start black-color-bg white-color-text items-end '>
                 <div className='logo-container'>
                 <Link href='/'><img src='/logonobg.png' className='logo'/></Link>
 
@@ -115,85 +132,117 @@ export default function Footer() {
                     <img onClick={GoEmail} className='w-6 cursor-pointer' src='/email.png' alt='email'/>
                 </div>
             </div>
-            <div className='p-8 flex justify-between cta-color-as-bg black-color-text'>
-{/* 
-                <div className='flex flex-col'>
-                    <h2 className='font-bold mt-2'>Quick Links</h2>
-                    <ul className='p-2'>
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Feactures</li>
-                        <li>Contact</li>
-                        <li>Get Notified</li>
-                    </ul>
-                </div>
+            <div className='p-10 flex justify-center white-color-bg black-color-text '>
+            <button onClick={openModal} className='cta-button'>Join The Waiting List</button>
+                      {isModalOpen && (
+                      <div className="modal-overlay">
+                        <div className="modal relative">
+                          <button className='border  px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
+                          <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
+                          <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1 p-6'>
+                              <div className='flex gap-2 pb-3 f-l-name-mobile-res'>
+                                <input
+                                type='text'
+                                placeholder='Last Name'
+                                required
+                                />
+                                <input
+                                type='text'
+                                placeholder='First Name'
+                                required
+                                />
+                              </div>
+                              <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
+                                <input className='border ' 
+                                  type='email'
+                                  id="email"
+                                  name="email"
+                                  placeholder='Email'
+                                  value={email}
+                                  onChange={handleEmailChange}
+                                  required
+                                  
+                                  />
+                                <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
+                              </div>
 
-                <div className='flex flex-col'>
-                    <h2 className='font-bold mt-2'>Location</h2>
-                    <ul className='p-2'>
-                        <li>234 Santa Clara</li>
-                        <li>123 Freemont Street</li>
-                    </ul>
-                </div>
-
-                <div className='flex flex-col'>
-                    <h2 className='font-bold mt-2'>Call Us</h2>
-                    <ul className='p-2'>
-                        <li>123456789</li>
-                        <li>123456789</li>
-                    </ul>
-                </div> */}
-                <h1 className='font-bold white-color-text page_title '>
-                    Join The Waiting List
-                </h1>
+                          </form>
+                        </div>
+                      </div>
+                    )}
             </div>
             <div className='notification black-color-text p-8'>
                 <div className=' flex items-center gap-2'>
                     <h2 className='font-bold'>Get Notified</h2>
                     <img className='w-4' src='/bell.png'/>
                 </div>
-                <p>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
-                <form onSubmit={handleEmailSubmit}>
-                    <input 
-                        type='email'
-                        id="email"
-                        name="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        required
-                        />
-                    <button type='submit' className='cta-button-submit'>Let&apos;s Go</button>
-                </form>
+                <div className='flex items-center justify-center flex-col '>
+                <p className='w-7/12 text-center something'>
+                  Something really cool is coming for our community.</p>
+                  <p className='enter_ pb-3'>Enter your email and we&apos;ll put you on our invite list.</p>
+                </div>
+                <form onSubmit={handleEmailSubmit} className='flex flex-col gap-5'>
+                    <div className='flex gap-2 input-mobile-res-footer'>
+                        <input
+                            type='text'
+                            placeholder='Last Name'
+                            required
+                            className='rounded'
+                            />
+                        <input
+                            type='text'
+                            placeholder='First Name'
+                            required
+                            className='rounded'
+                            />
+                      </div>
+                      <div className='flex input-email-res-footer h-9 justify-center items-center mobile-respons- gapflex'>
+                          <input className='border w-full' 
+                              type='email'
+                              id="email"
+                              name="email"
+                              placeholder='Email'
+                              value={email}
+                              onChange={handleEmailChange}
+                              required
+                              />
+                            <button type='submit' className='cta-button-submit w-1/2 h-9 mobile-respons-'>Let&apos;s Go</button>
+                      </div>
+
+                  </form>
             </div>
         </div>
 
-        <div className='w-1/2 black-color-bg right_footer'>
+        <div className='w-1/2 black-color-bg p-6 right_footer'>
 
             <div className='p-8 white-color-text items-center'>
                 <h1 className='white-color-text page_title'>Contact Us</h1>
             </div>
 
-            <form onSubmit={handleSubmit} className='black-color-bg flex flex-col items-center gap-8 contact_us'>
+            <form onSubmit={handleSubmit} className='black-color-bg flex flex-col items-center contact_us gap-5'>
                 <input 
                     placeholder='Enter Full Name' 
                     type='text'
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    className='w-full rounded'
                     />
                 <input 
                     placeholder='Enter Email Address' 
                     type='email'
-                    required
+                    require
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className='w-full rounded'
                     />
-                <textarea className='text_box p-2' 
+                <textarea className='text_box p-2 mt-4 w-full rounded' 
                     placeholder='Type Message...'
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    
                     />
-                <button type='submit' className='cta-button'>Send Message</button>
+                <button type='submit' className='cta-button mt-10'>Send Message</button>
             </form>
             
         </div>
