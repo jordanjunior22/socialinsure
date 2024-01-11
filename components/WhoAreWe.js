@@ -10,15 +10,15 @@ export default function WhoAreWe() {
         <p className='text-center'>{describe}</p>
 
         <div className='flex items-center justify-between py-10 about-inner-container gap-20'>
-          <div className='flex gap-4 items-center'>
+          <div className='flex gap-4 items-center goals'>
             <img className='' src='/goalsvg.svg' alt='goal'/>
             <h2 className='we font-bold text-xl'>Goal Oriented</h2>
           </div>
-          <div className='flex gap-4 items-center'>
-          <img className='' src='/reliablesvg.svg' alt='reliable'/>
+          <div className='flex gap-4 items-center goals'>
+            <img className='' src='/reliablesvg.svg' alt='reliable'/>
             <h2 className='we font-bold text-xl'>Reliable</h2>
           </div>
-          <div className='flex gap-4 items-center'>
+          <div className='flex gap-4 items-center goals'>
             <img className='' src='/supportsvg.svg' alt='support'/>
             <h2 className='we font-bold text-xl'>Support</h2>
           </div>
