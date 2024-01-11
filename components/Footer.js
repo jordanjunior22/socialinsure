@@ -135,8 +135,8 @@ export default function Footer() {
             <div className='p-10 flex justify-center white-color-bg black-color-text rounded-tl rounded-tr'>
             <button onClick={openModal} className='cta-button big-cta '>Join The Waiting List</button>
                       {isModalOpen && (
-                      <div className="modal-overlay">
-                        <div className="modal relative">
+                      <div className={`modal-overlay z-50 ${isModalOpen ? 'active' : ''}`}>
+                        <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
                           <button className='px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
                           <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1'>
@@ -144,12 +144,12 @@ export default function Footer() {
                                 <input
                                 type='text'
                                 placeholder='Last Name'
-                                require="true"
+                                required
                                 />
                                 <input
                                 type='text'
                                 placeholder='First Name'
-                                require="true"
+                                required
                                 />
                               </div>
                               <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
@@ -160,7 +160,7 @@ export default function Footer() {
                                   placeholder='Email'
                                   value={email}
                                   onChange={handleEmailChange}
-                                  require="true"
+                                  required
                                   
                                   />
                                 <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
@@ -186,13 +186,13 @@ export default function Footer() {
                         <input
                             type='text'
                             placeholder='Last Name'
-                            require="true"
+                            required
                             className='rounded'
                             />
                         <input
                             type='text'
                             placeholder='First Name'
-                            require="true"
+                            required
                             className='rounded'
                             />
                       </div>
@@ -204,7 +204,7 @@ export default function Footer() {
                               placeholder='Email'
                               value={email}
                               onChange={handleEmailChange}
-                              require="true"
+                              required
                               />
                             <button type='submit' className='cta-button-submit w-1/2 h-9 mobile-respons-'>Let&apos;s Go</button>
                       </div>
@@ -223,7 +223,7 @@ export default function Footer() {
                 <input 
                     placeholder='Enter Full Name' 
                     type='text'
-                    require="true"
+                    required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className='w-full rounded'
@@ -231,7 +231,7 @@ export default function Footer() {
                 <input 
                     placeholder='Enter Email Address' 
                     type='email'
-                    require="true"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className='w-full rounded'

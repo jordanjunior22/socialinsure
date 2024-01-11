@@ -91,22 +91,10 @@ export default function HeroSection() {
                     <Link href='/'><img src='/logonobg2.png' className='logo'/></Link>
                     
                   </div>
-                  {/* <div className='flex gap-10 lg:gap-4 nav-links'>
-                    <Link href='/'>Home</Link>
-                    <Link href='/'>About Us</Link>
-                    <Link href='/'>Features</Link>
-                    <Link href='/'>Contact</Link>
-                  </div> */}
+
                   <div className='nav-links'>
                     <button className='cta-button' onClick={openModal}>Get Notified</button>
                   </div>
-{/* 
-                  <div className='menu-icon' onClick={handleOpen}>
-                    <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                    </svg>
-                  </div> */}
-
 
                 </div>
                 <div className='phone-container flex flex-col gap-3 text-center justify-center items-center px-10'>
@@ -116,9 +104,9 @@ export default function HeroSection() {
                     <div className='flex gap-10 items-center '>
                       <button onClick={openModal} className='cta-button big-cta'>Join The Waiting List</button>
                       {isModalOpen && (
-                      <div className="modal-overlay z-50">
-                        <div className="modal relative">
-                          <button className='border  px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
+                      <div className={`modal-overlay z-50 ${isModalOpen ? 'active' : ''}`}>
+                        <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
+                          <button className='border px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
                           <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1 p-6'>
                               <div className='flex gap-2 pb-3 f-l-name-mobile-res'>
@@ -141,7 +129,7 @@ export default function HeroSection() {
                                   placeholder='Email'
                                   value={email}
                                   onChange={handleEmailChange}
-                                  require="true"
+                                  required
                                   
                                   />
                                 <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
@@ -151,30 +139,11 @@ export default function HeroSection() {
                         </div>
                       </div>
                     )}
-                      {/* <Link href='/' className='email '>Email Us</Link> */}
+
                     </div>
                 </div>
                 
             </div>
-
-            {/* <div className={`${SideNavOpen ? 'fixed right-0 w-64 bg-gray-700 h-full white-color-text shadow-drop-left' : 'SideNavClosed'}`}>
-
-              <div className='flex flex-col gap-5 p-6'>
-              <div className='cursor-pointer' onClick={handleClose}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </div>
-
-                <Link href='/'>Home</Link>
-                <Link href='/'>About Us</Link>
-                <Link href='/'>Features</Link>
-                <Link href='/'>Contact</Link>
-                <Link href='/' className='cta-button'>Get Notified</Link>
-                <Link href='/' className='email '>Email Us</Link>
-              </div>
-            </div> */}
-
         </div>
     </section>
   )

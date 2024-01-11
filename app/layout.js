@@ -1,4 +1,5 @@
 import './globals.css'
+import 'core-js';
 
 export const metadata = {
   title: 'Social Insure',

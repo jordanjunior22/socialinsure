@@ -85,6 +85,10 @@ font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modal {
@@ -96,12 +100,23 @@ font-size: 1.5rem;
   width: 60%;
   border-radius: 5px;
 
+
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.modal-overlay.active, .modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .cta-button-submit{
   background-color: var(--cta-color);
   color: var(--white-color);
   padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 700;
   transition : background-color 0.3s ease-in-out;
 }
