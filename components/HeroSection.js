@@ -114,7 +114,7 @@ export default function HeroSection() {
                     <h2 className='font-bold text-lg'>Community Support Made Easy</h2>
                     <p className='des'>{description}</p>
                     <div className='flex gap-10 items-center '>
-                      <button onClick={openModal} className='cta-button'>Join The Waiting List</button>
+                      <button onClick={openModal} className='cta-button big-cta'>Join The Waiting List</button>
                       {isModalOpen && (
                       <div className="modal-overlay z-50">
                         <div className="modal relative">

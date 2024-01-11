@@ -132,14 +132,14 @@ export default function Footer() {
                     <img onClick={GoEmail} className='w-6 cursor-pointer' src='/email.png' alt='email'/>
                 </div>
             </div>
-            <div className='p-10 flex justify-center white-color-bg black-color-text '>
-            <button onClick={openModal} className='cta-button'>Join The Waiting List</button>
+            <div className='p-10 flex justify-center white-color-bg black-color-text rounded-tl rounded-tr'>
+            <button onClick={openModal} className='cta-button big-cta '>Join The Waiting List</button>
                       {isModalOpen && (
                       <div className="modal-overlay">
                         <div className="modal relative">
-                          <button className='border  px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
+                          <button className='px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
                           <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
-                          <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1 p-6'>
+                          <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1'>
                               <div className='flex gap-2 pb-3 f-l-name-mobile-res'>
                                 <input
                                 type='text'
@@ -171,7 +171,7 @@ export default function Footer() {
                       </div>
                     )}
             </div>
-            <div className='notification black-color-text p-8'>
+            <div className='notification black-color-text p-8 rounded-bl rounded-br '>
                 <div className=' flex items-center gap-2'>
                     <h2 className='font-bold'>Get Notified</h2>
                     <img className='w-4' src='/bell.png'/>
@@ -213,13 +213,13 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className='w-1/2 black-color-bg p-6 right_footer'>
+        <div className='w-1/2 black-color-bg p-6 right_footer '>
 
-            <div className='p-8 white-color-text items-center'>
-                <h1 className='white-color-text page_title'>Contact Us</h1>
+            <div className='p-4 white-color-text items-center '>
+                <h1 className='white-color-text page_title'>GET IN TOUCH</h1>
             </div>
 
-            <form onSubmit={handleSubmit} className='black-color-bg flex flex-col items-center contact_us gap-5'>
+            <form onSubmit={handleSubmit} className='black-color-bg flex flex-col items-center contact_us gap-7'>
                 <input 
                     placeholder='Enter Full Name' 
                     type='text'

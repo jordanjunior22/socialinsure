@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600&display=swap');
+html{
+  font-size: 23px;
+}
+
 :root {
   --black-color: #3E3E3E;
   --white-color: #EEEEEE;
@@ -68,6 +72,9 @@ a{
   transition : background-color 0.3s ease-in-out;
   font-weight: 700;
 }
+.big-cta{
+font-size: 1.5rem;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -133,9 +140,9 @@ font-size:1rem;
 }
 .text_box{
   outline: none;
-  height: 255px;
+  height: 360px;
   padding: 0.3rem 1rem;
-
+  
 }
 .heading{
   /* background: #3E3E3E;
@@ -228,7 +235,9 @@ line-height: normal;
   background-image: url('/texture.png');
 }
 @media (max-width: 1023px) {
-
+  html{
+    font-size: 20px;
+  }
   .div-container{
     justify-content: flex-end;
   }
@@ -246,6 +255,9 @@ line-height: normal;
   }
 }
 @media (max-width: 768px) {
+  html{
+    font-size: 18px;
+  }
   .modal {
     width: 80%;
   }
@@ -314,7 +326,10 @@ line-height: normal;
     margin-bottom: 10px;
   }
 }
-@media (max-width:425px){
+@media (max-width:464px){
+  html{
+    font-size: 15px;
+  }
 
   .box{
     flex-direction: column-reverse;

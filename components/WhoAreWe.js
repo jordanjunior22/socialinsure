@@ -6,7 +6,7 @@ export default function WhoAreWe() {
   
   return (
     <section className='flex flex-col  black-color-bg white-color-text p-8 about-container'>
-        <h1 className=' page_title '>About<span className='we'> Social Insure</span><span className='text-blue-300'> ?</span></h1>
+        <h1 className=' page_title '>About<span className='we'> Social Insure</span></h1>
         <p className='text-center'>{describe}</p>
 
         <div className='flex items-center justify-between py-10 about-inner-container gap-20'>

@@ -6,7 +6,7 @@ export default function Features() {
 
   return (
     <section className='white-color-bg black-color-text feature-bg'>
-        <h1 className='page_title'> <span className='we'>Features</span><span className='text-blue-400'> & </span><span className='we'>Services</span> </h1>
+        <h1 className='page_title'> <span className='we'>Features</span> & <span className='we'>Services</span> </h1>
         <p className='text-center px-2'>{description}</p>
 
         <div className='flex flex-col items-center py-10 gap-6'>
