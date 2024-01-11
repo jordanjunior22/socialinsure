@@ -1,4 +1,6 @@
+"use client"
 import React from 'react'
+import ScrollReveal from './ScrollReveal';
 
 export default function WhoAreWe() {
   const describe ='Social Insure is a social community crowd funded insurance platform for those who care about their love ones, to have the support the deserve when the truly need it.';
@@ -6,10 +8,13 @@ export default function WhoAreWe() {
   
   return (
     <section className='flex flex-col  black-color-bg white-color-text p-8 about-container'>
+      <ScrollReveal>
         <h1 className=' page_title '>About<span className='we'> Social Insure</span></h1>
         <p className='text-center'>{describe}</p>
+      </ScrollReveal>
 
-        <div className='flex items-center justify-between py-10 about-inner-container gap-20'>
+      <ScrollReveal>
+      <div className='flex items-center justify-between py-10 about-inner-container gap-20'>
           <div className='flex gap-4 items-center goals'>
             <img className='' src='/goalsvg.svg' alt='goal'/>
             <h2 className='we font-bold text-xl'>Goal Oriented</h2>
@@ -23,6 +28,8 @@ export default function WhoAreWe() {
             <h2 className='we font-bold text-xl'>Support</h2>
           </div>
         </div>
+      </ScrollReveal>
+
 
     </section>
   )

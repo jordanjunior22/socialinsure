@@ -144,12 +144,12 @@ export default function Footer() {
                                 <input
                                 type='text'
                                 placeholder='Last Name'
-                                required
+                                require="true"
                                 />
                                 <input
                                 type='text'
                                 placeholder='First Name'
-                                required
+                                require="true"
                                 />
                               </div>
                               <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
@@ -160,7 +160,7 @@ export default function Footer() {
                                   placeholder='Email'
                                   value={email}
                                   onChange={handleEmailChange}
-                                  required
+                                  require="true"
                                   
                                   />
                                 <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
@@ -186,13 +186,13 @@ export default function Footer() {
                         <input
                             type='text'
                             placeholder='Last Name'
-                            required
+                            require="true"
                             className='rounded'
                             />
                         <input
                             type='text'
                             placeholder='First Name'
-                            required
+                            require="true"
                             className='rounded'
                             />
                       </div>
@@ -204,7 +204,7 @@ export default function Footer() {
                               placeholder='Email'
                               value={email}
                               onChange={handleEmailChange}
-                              required
+                              require="true"
                               />
                             <button type='submit' className='cta-button-submit w-1/2 h-9 mobile-respons-'>Let&apos;s Go</button>
                       </div>
@@ -223,7 +223,7 @@ export default function Footer() {
                 <input 
                     placeholder='Enter Full Name' 
                     type='text'
-                    required
+                    require="true"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className='w-full rounded'
@@ -231,7 +231,7 @@ export default function Footer() {
                 <input 
                     placeholder='Enter Email Address' 
                     type='email'
-                    require
+                    require="true"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className='w-full rounded'

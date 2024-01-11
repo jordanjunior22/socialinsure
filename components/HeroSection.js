@@ -141,7 +141,7 @@ export default function HeroSection() {
                                   placeholder='Email'
                                   value={email}
                                   onChange={handleEmailChange}
-                                  required
+                                  require="true"
                                   
                                   />
                                 <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
