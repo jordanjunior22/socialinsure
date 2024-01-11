@@ -242,7 +242,7 @@ export default function Footer() {
                     onChange={(e) => setMessage(e.target.value)}
                     
                     />
-                <button type='submit' className='cta-button mt-10'>Send Message</button>
+                <button type='submit' className='cta-button mt-5'>Send Message</button>
             </form>
             
         </div>
