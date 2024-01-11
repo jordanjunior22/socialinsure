@@ -5,7 +5,7 @@ export async function POST(Request){
   
     // Extract the email address from the request body
     const { email } = Request.body;
-    //console.log('Received email:', email);
+    console.log('Received email:', Request);
   
     // Configure the Mailchimp client with the API key and server prefix
     const client = require("@mailchimp/mailchimp_marketing");

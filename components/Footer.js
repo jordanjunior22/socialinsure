@@ -47,7 +47,7 @@ export default function Footer() {
     const handleEmailSubmit = async (event) => {
       event.preventDefault();
   
-      //console.log('Email before fetch:', email);
+      console.log('Email before fetch:', email);
   
       try {
         const response = await fetch('/api/mailchimp', {
