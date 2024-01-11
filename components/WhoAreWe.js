@@ -25,7 +25,7 @@ export default function WhoAreWe() {
           </div>
           <div className='flex gap-4 items-center goals'>
             <img className='' src='/supportsvg.svg' alt='support'/>
-            <h2 className='we font-bold text-xl'>Support</h2>
+            <h2 className='we font-bold text-xl'>Support Features & Services</h2>
           </div>
         </div>
       </ScrollReveal>
