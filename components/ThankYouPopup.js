@@ -4,22 +4,20 @@ const ThankYouPopup = ({ isOpen, onClose }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const handleLoad = () => {
-          setIsLoading(false);
-        };
-        window.addEventListener('load', handleLoad);
-        return () => {
-          window.removeEventListener('load', handleLoad);
-        };
-      }, []);
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 3000); // Adjust the timeout duration as needed
+
+        return () => clearTimeout(timer);
+    }, []);
     
 
     return (
         <div className="thank-you-popup z-50">
             
-             {/* {isLoading ? (
+             {isLoading ? (
                 <img src='/loading.gif'/>
-                ) : ( */}
+                ) : (
       
             <div className="popup-content relative flex flex-col items-center ">
             <button className="absolute left-2 top-2 bg-red-300 px-2 text-white" onClick={onClose}>X</button>
@@ -29,7 +27,7 @@ const ThankYouPopup = ({ isOpen, onClose }) => {
                 As soon as the web and mobile app is out of beta with the early adopters and ready for the official launch, you will be notified by email.</p>
                 
             </div>
-            {/* )} */}
+            )}
             <style jsx>{`
                 .thank-you-popup {
                     position: fixed;

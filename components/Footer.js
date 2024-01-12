@@ -3,6 +3,12 @@ import React from 'react'
 import { useState } from 'react';
 import Link from 'next/link';
 import ThankYouPopup from './ThankYouPopup';
+import {TfiEmail} from 'react-icons/tfi'
+import {BsFacebook} from 'react-icons/bs'
+import {BsWhatsapp} from 'react-icons/bs'
+import {FaInstagramSquare} from 'react-icons/fa'
+import {AiFillTwitterSquare} from 'react-icons/ai'
+import { BsTiktok } from 'react-icons/bs'
 
 export default function Footer() {
   const [showPopup, setShowPopup] = useState(false);
@@ -125,11 +131,11 @@ export default function Footer() {
                 </div>
                 <div className=' flex gap-5 social_media'>
                     
-                    <img onClick={GoFacebook} className='w-6 cursor-pointer' src='/facebook.png' alt='facebook'/>
-                    <img onClick={GoInstagram} className='w-6 cursor-pointer' src='/instagram.png' alt='instagram'/>
-                    <img onClick={GoTwitter} className='w-6 cursor-pointer' src='/twitter.png' alt='twitter'/>
-                    <img onClick={GoTiktok} className='w-6 cursor-pointer' src='/tiktok.png' alt='tiktok'/>
-                    <img onClick={GoEmail} className='w-6 cursor-pointer' src='/email.png' alt='email'/>
+                    <BsFacebook onClick={GoFacebook} className='w-6 cursor-pointer hover:text-red-800'/>
+                    <FaInstagramSquare onClick={GoInstagram} className='w-6 cursor-pointer hover:text-red-800'/>
+                    <AiFillTwitterSquare onClick={GoTwitter} className='w-6 cursor-pointer hover:text-red-800' />
+                    <BsTiktok onClick={GoTiktok} className='w-6 cursor-pointer hover:text-red-800'/>
+                    <TfiEmail onClick={GoEmail} className='w-6 cursor-pointer hover:text-red-800'/>
                 </div>
             </div>
             <div className='p-10 flex justify-center white-color-bg black-color-text rounded-tl rounded-tr'>
