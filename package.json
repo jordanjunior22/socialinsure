@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@react-icons/all-files": "^4.1.0",
     "boxicons": "^2.1.4",
     "core-js": "^3.35.0",
     "next": "14.0.4",
     "nodemailer": "^6.9.8",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

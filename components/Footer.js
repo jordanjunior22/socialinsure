@@ -62,7 +62,7 @@ export default function Footer() {
         //console.log(data); // Log the response from the API
   
         // Optionally, you can show a success message to the user
-        if (response.ok) {
+        if (data.message === 'Email subscribed successfully') {
           // alert('Subscribed successfully!');
           setModalOpen(false);
           setShowPopup(true);
@@ -137,8 +137,12 @@ export default function Footer() {
                       {isModalOpen && (
                       <div className={`modal-overlay z-50 ${isModalOpen ? 'active' : ''}`}>
                         <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
-                          <button className='px-2 hover:bg-red-400 hover:text-white absolute left-5 top-5' onClick={closeModal}>X</button>
-                          <p className='mt-4'>Some thing really cool is coming for our community. Enter your email and we&apos;ll put you on our invite list.</p>
+                          <button className='px-2 hover:bg-red-800 hover:text-white absolute left-5 top-5 border' onClick={closeModal}>X</button>
+                          <div className='flex items-center justify-center flex-col '>
+                            <p className='w-7/12 text-center something'>
+                            Something really cool is coming for our community.</p>
+                            <p className='enter_ pb-3'>Enter your email and we&apos;ll put you on our invite list.</p>
+                          </div>
                           <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1'>
                               <div className='flex gap-2 pb-3 f-l-name-mobile-res'>
                                 <input
@@ -163,7 +167,7 @@ export default function Footer() {
                                   required
                                   
                                   />
-                                <button type='submit' className='cta-button-submit w-1/4 h-9 mobile-respons- '>Let&apos;s Go</button>
+                                <button type='submit' className='cta-button-submit h-9 mobile-respons- '>Let&apos;s Go</button>
                               </div>
 
                           </form>
@@ -177,7 +181,7 @@ export default function Footer() {
                     <img className='w-4' src='/bell.png'/>
                 </div>
                 <div className='flex items-center justify-center flex-col '>
-                <p className='w-7/12 text-center something'>
+                  <p className='w-7/12 text-center something'>
                   Something really cool is coming for our community.</p>
                   <p className='enter_ pb-3'>Enter your email and we&apos;ll put you on our invite list.</p>
                 </div>
