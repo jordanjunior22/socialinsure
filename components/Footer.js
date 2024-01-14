@@ -143,8 +143,9 @@ export default function Footer() {
                         <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
                           <button className='px-2 hover:bg-red-800 hover:text-white absolute left-5 top-5 border' onClick={closeModal}>X</button>
                           <div className='flex items-center justify-center flex-col '>
-                            <p className='w-7/12 text-center something'>
-                            Something really cool is coming for our community.</p>
+                          <p className='w-full text-center something'>
+                            Something really cool is coming</p>
+                            <p className='something'>for our community.</p>
                             <p className='enter_ pb-3'>Enter your email and we&apos;ll put you on our invite list.</p>
                           </div>
                           <form onSubmit={handleEmailSubmit} className='flex flex-col gap-1'>
@@ -153,15 +154,17 @@ export default function Footer() {
                                 type='text'
                                 placeholder='Last Name'
                                 required
+                                className='rounded-md'
                                 />
                                 <input
                                 type='text'
                                 placeholder='First Name'
                                 required
+                                className='rounded-md'
                                 />
                               </div>
                               <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
-                                <input className='border ' 
+                                <input className='border rounded-tl rounded-bl' 
                                   type='email'
                                   id="email"
                                   name="email"
@@ -171,7 +174,7 @@ export default function Footer() {
                                   required
                                   
                                   />
-                                <button type='submit' className='cta-button-submit h-9 mobile-respons- '>Let&apos;s Go</button>
+                                <button type='submit' className='cta-button-submit h-9 mobile-respons- rounded-tr rounded-br'>Let&apos;s Go</button>
                               </div>
 
                           </form>
