@@ -13,6 +13,8 @@ html{
 }
 .social_media{
   margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #18B8A8;
 }
 a{
   list-style: none;

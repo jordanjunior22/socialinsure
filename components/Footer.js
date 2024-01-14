@@ -4,10 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import ThankYouPopup from './ThankYouPopup';
 import {TfiEmail} from 'react-icons/tfi'
-import {BsFacebook} from 'react-icons/bs'
-import {BsWhatsapp} from 'react-icons/bs'
-import {FaInstagramSquare} from 'react-icons/fa'
-import {AiFillTwitterSquare} from 'react-icons/ai'
+import {BsFacebook, BsTwitter} from 'react-icons/bs'
+import {FaInstagram} from 'react-icons/fa'
 import { BsTiktok } from 'react-icons/bs'
 
 export default function Footer() {
@@ -132,8 +130,8 @@ export default function Footer() {
                 <div className=' flex gap-5 social_media'>
                     
                     <BsFacebook onClick={GoFacebook} className='w-6 cursor-pointer hover:text-red-800'/>
-                    <FaInstagramSquare onClick={GoInstagram} className='w-6 cursor-pointer hover:text-red-800'/>
-                    <AiFillTwitterSquare onClick={GoTwitter} className='w-6 cursor-pointer hover:text-red-800' />
+                    <FaInstagram onClick={GoInstagram} className='w-6 cursor-pointer hover:text-red-800'/>
+                    <BsTwitter onClick={GoTwitter} className='w-6 cursor-pointer hover:text-red-800' />
                     <BsTiktok onClick={GoTiktok} className='w-6 cursor-pointer hover:text-red-800'/>
                     <TfiEmail onClick={GoEmail} className='w-6 cursor-pointer hover:text-red-800'/>
                 </div>
