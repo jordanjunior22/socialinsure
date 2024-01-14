@@ -3,7 +3,7 @@ import React from 'react'
 import ScrollReveal from './ScrollReveal';
 
 export default function Features() {
-  const description = 'Social Insure allows you to Social Life, Social Health, Social Kids, Social Patron, Social Entrepreneur, and Social Commune with and for like-minded friends.     ';
+  const description = 'Social Insure liaises you with a blend of healthier life-Social Well-being, Social Kids, Social Patron, Social Entrepreneur, and Social Commune.';
   const about = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.';
 
   return (
@@ -16,22 +16,21 @@ export default function Features() {
       </ScrollReveal>
       <div className='flex flex-col items-center py-10 gap-6'>
        
-        <div className='flex items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+        <div className='flex items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
             <div className='flex flex-col items-start '>
               <ScrollReveal>
                 <h2 className='font-bold text-xl we'>Social Life</h2>
               </ScrollReveal>
               <ScrollReveal>
-                <p className='font-bold'>Let&apos;s Join Hands To Help Bereaved Members Families</p>
+                <p className='font-bold'>Joining Hands To Help Bereaved Families</p>
               </ScrollReveal>
               <div className='mt-1'>
-                <ScrollReveal><h4 className='font-bold sub_heading'>Give a little, Help a lot!</h4></ScrollReveal>
+                <ScrollReveal><h4 className='font-bold sub_heading'>&apos;Give a token, Help A Lot More&apos;</h4></ScrollReveal>
                 <ScrollReveal>
-                  <p className='opacity-70'>Social Life allows you to support Living relatives of a death love one.
-                    The aim is to bring all members, living in the diaspora, together under 
-                    one umbrella in order to reduce the donation amount of each member to 
-                    $1.25 per adult member and about $0.75 per child contribution. 
-                    No More Financial Burden After Losing A Loved One.</p>
+                  <p className='opacity-70'>Social Life allows you to support Living relatives of a dead loved ones.
+                  Social Life allows grieving families to enjoy support from the community. 
+                  The objective is to bring family members living in the diaspora under an umbrella, in order to reduce donations to $1.25 per adult, and $0.75 per minor relative.
+                  <br/>— No more crucifying financial burdens after losing a loved one.</p>
                 </ScrollReveal>
               </div>
             </div>
@@ -41,7 +40,7 @@ export default function Features() {
 
 
         
-          <div className='flex flex-row-reverse items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+          <div className='flex flex-row-reverse items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
               <div className='flex flex-col items-start '>
                 <ScrollReveal>
                   <h2 className='font-bold text-xl we'>Social Health</h2>
@@ -56,9 +55,9 @@ export default function Features() {
                   </ScrollReveal>
                   
                   <ScrollReveal>
-                    <p className='opacity-70'>Social Health allows you to meet a patient, understand their story and decide if you can support. Your donation directly funds life-changing healthcare.
-                      Let's make healthcare a reality for everyone. 100% of your donation, funds life — changing health needs.
-                      — We prove it by being radically transparent.</p>
+                    <p className='opacity-70'>Social Health allows you to meet a patient, understand their story and decide if you can support. Your donation directly funds life-changing healthcare.<br/>
+Let's make healthcare a reality for everyone. 100% of your donation, funds life <br/> — changing health needs.
+— We prove it by being radically transparent.</p>
                   </ScrollReveal>
 
                 </div>
@@ -68,7 +67,7 @@ export default function Features() {
         
 
         
-          <div className='flex items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+          <div className='flex items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
               <div className='flex flex-col items-start '>
                 <ScrollReveal>
                   <h2 className='font-bold text-xl we'>Social Kids</h2>
@@ -84,7 +83,7 @@ export default function Features() {
                 </ScrollReveal>
                 <ScrollReveal>
                   <p className='opacity-70'>Help save and meaningfully improve more children&apos;s lives by supporting their health and nutrition, education, shelter and hope, for a brighter tomorrow.
-                      Become a guardian and actively be a part of a Kids life or give a One Time support.</p>
+                  <br/> Become a guardian and actively be a part of a Kids life or give a One Time support.</p>
                 </ScrollReveal>
 
                 </div>
@@ -94,7 +93,7 @@ export default function Features() {
        
 
         
-          <div className='flex flex-row-reverse items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+          <div className='flex flex-row-reverse items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
               <div className='flex flex-col items-start '>
                 <ScrollReveal>
                   <h2 className='font-bold text-xl we'>Social Patronage</h2>
@@ -108,9 +107,8 @@ export default function Features() {
                   <h4 className='font-bold sub_heading'>Can &ldquo;pocket change&ldquo; really make a change?</h4>
                 </ScrollReveal>
                 <ScrollReveal>
-                  <p className='opacity-70'>Social Patronage gives you the to opportunity to be a person who gives financial or other support to a person, a organization, a cause, or an activity you admire.
-                        Become a sponsor of the entire life cycle or give a One Time support.
-                        — We</p>
+                  <p className='opacity-70'>Social Patronage gives you the opportunity to be a person who gives financial, or other form of support to a person, organization, cause or activity you relish. 
+<br/>Become a sponsor of a complete project or give a One Time support.</p>
                 </ScrollReveal>
 
                 </div>
@@ -119,7 +117,7 @@ export default function Features() {
             </div>
         
 
-          <div className='flex items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+          <div className='flex items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
               <div className='flex flex-col items-start '>
                 <ScrollReveal>
                   <h2 className='font-bold text-xl we'>Social Entrepreneur</h2>
@@ -129,11 +127,10 @@ export default function Features() {
                 </ScrollReveal>
                 <div className='mt-1'>
                 <ScrollReveal>
-                  <h4 className='font-bold sub_heading'>Can &ldquo;pocket change&ldquo; really make a change?</h4>
+                  <h4 className='font-bold sub_heading'>&ldquo;It takes more than funding to run a successful business. It starts with stepping into footprints of those that have walked a path successfully.&ldquo;</h4>
                 </ScrollReveal>
                 <ScrollReveal>
-                  <p className='opacity-70'>We&apos;re absolutely sure of it. In fact, you&apos;d be amazed at how far a micro loan can take someone with all the motivation in the world, but little to no resources. 
-                    Social Entrepreneur allows you to Interact directly with small business entrepreneurs back home, review their business proposals and fund the projects your resonate with. We do the due diligence.</p>
+                  <p className='opacity-70'>Social Entrepreneur allows you to interact with small business owners back home, review business proposals and make available funds for projects you resonate with. — Our team will do the due diligence.</p>
                 </ScrollReveal>
                 </div>
               </div>
@@ -142,7 +139,7 @@ export default function Features() {
         
 
  
-        <div className='flex flex-row-reverse items-start justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
+        <div className='flex flex-row-reverse items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
             <div className='flex flex-col items-start '>
               <ScrollReveal>
                 <h2 className='font-bold text-xl we'>Social Commune</h2>
@@ -152,12 +149,10 @@ export default function Features() {
               </ScrollReveal>
               <div className='mt-1'>
               <ScrollReveal>
-                <h4 className='font-bold sub_heading'>The place where help and hope go hand in hand.</h4>
+                <h4 className='font-bold sub_heading'>The Place Where &ldquo;together as one&ldquo; Communal Spirit breeds Hope.</h4>
               </ScrollReveal>
               <ScrollReveal>
-                <p className='opacity-70'>Social Commune allows you to network and meet other African diaspora. 
-                    Share the Hope through crowdfunding mega projects and supporting kinds back home, 
-                    across geographical, geopolitical and religious boundaries.</p>
+                <p className='opacity-70'>Social Commune offers safe avenue to network and meet other African diaspora, and share the hope via crowdfunding mega projects back home, all the while supporting in kind-cutting across geographical, geopolitical and religious boundaries.</p>
               </ScrollReveal>
               </div>
             </div>

@@ -11,7 +11,7 @@ export default function HeroSection() {
 
 
   const Heading = 'Social Insure';
-  const description = 'A web and mobile platform to social insure the live and dreams of those you love and care about.';
+  const description = 'Web and mobile platform to insure the lives and dreams of those you care about';
 
 
 
