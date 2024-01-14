@@ -208,7 +208,7 @@ export default function Footer() {
                             />
                       </div>
                       <div className='flex input-email-res-footer h-9 justify-center items-center mobile-respons- gapflex'>
-                          <input className='border w-full' 
+                          <input className='border w-full rounded-tl rounded-bl' 
                               type='email'
                               id="email"
                               name="email"
@@ -217,7 +217,7 @@ export default function Footer() {
                               onChange={handleEmailChange}
                               required
                               />
-                            <button type='submit' className='cta-button-submit w-1/2 h-9 mobile-respons-'>Let&apos;s Go</button>
+                            <button type='submit' className='cta-button-submit w-1/2 h-9 mobile-respons- rounded-tr rounded-br'>Let&apos;s Go</button>
                       </div>
 
                   </form>
