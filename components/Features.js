@@ -3,7 +3,7 @@ import React from 'react'
 import ScrollReveal from './ScrollReveal';
 
 export default function Features() {
-  const description = 'Social Insure liaises you with a blend of healthier life-Social Well-being, Social Kids, Social Patron, Social Entrepreneur, and Social Commune.';
+  const description = 'Social Insure liaises you with a blend of healthier life-Social Well-being,<br/> Social Kids, Social Patron, Social Entrepreneur, and Social Commune.';
   const about = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.';
 
   return (
@@ -12,7 +12,7 @@ export default function Features() {
         <h1 className='page_title'> <span className='we'>Features</span> & <span className='we'>Services</span> </h1>
       </ScrollReveal>
       <ScrollReveal>
-        <p className='text-center px-2'>{description}</p>
+        <p className='text-center px-2'>Social Insure liaises you with a blend of healthier life-Social Well-being, Social Kids, Social Patron,<br/> Social Entrepreneur, and Social Commune.</p>
       </ScrollReveal>
       <div className='flex flex-col items-center py-10 gap-6'>
        
@@ -22,10 +22,10 @@ export default function Features() {
                 <h2 className='font-bold text-xl we'>Social Life</h2>
               </ScrollReveal>
               <ScrollReveal>
-                <p className='font-bold'>Joining Hands To Help Bereaved Families</p>
+                <p className='font-bold sub_heading'>Joining Hands To Help Bereaved Families</p>
               </ScrollReveal>
-              <div className='mt-1'>
-                <ScrollReveal><h4 className='font-bold sub_heading'>&apos;Give a token, Help A Lot More&apos;</h4></ScrollReveal>
+              <div className='mt-4'>
+                <ScrollReveal><h4 className='font-bold '>&apos;Give a token, Help A Lot More&apos;</h4></ScrollReveal>
                 <ScrollReveal>
                   <p className='opacity-70'>Social Life allows you to support Living relatives of a dead loved ones.
                   Social Life allows grieving families to enjoy support from the community. 
@@ -46,12 +46,12 @@ export default function Features() {
                   <h2 className='font-bold text-xl we'>Social Health</h2>
                 </ScrollReveal>
                 <ScrollReveal>
-                  <p className='font-bold'>Fund healthcare for family & people back home</p>
+                  <p className='font-bold sub_heading'>Fund healthcare for family & people back home</p>
                 </ScrollReveal>
                 
-                <div className='mt-1'>
+                <div className='mt-4'>
                   <ScrollReveal>
-                    <h4 className='font-bold sub_heading'>Everyone deserves healthcare.</h4>
+                    <h4 className='font-bold '>Everyone deserves healthcare.</h4>
                   </ScrollReveal>
                   
                   <ScrollReveal>
@@ -74,12 +74,12 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
                 </ScrollReveal>
 
                 <ScrollReveal>
-                  <p className='font-bold'>Better World for Every Child</p>
+                  <p className='font-bold sub_heading'>Better World for Every Child</p>
                 </ScrollReveal>
 
-                <div className='mt-1'>
+                <div className='mt-4'>
                 <ScrollReveal>
-                  <h4 className='font-bold sub_heading'>Children cannot grow and learn without enough Food, Shelter and Hope.</h4>
+                  <h4 className='font-bold '>Children cannot grow and learn without enough Food, Shelter and Hope.</h4>
                 </ScrollReveal>
                 <ScrollReveal>
                   <p className='opacity-70'>Help save and meaningfully improve more children&apos;s lives by supporting their health and nutrition, education, shelter and hope, for a brighter tomorrow.
@@ -100,11 +100,11 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
                 </ScrollReveal>
 
                 <ScrollReveal>
-                  <p className='font-bold'>Become a &ldquo;Patron Saint&ldquo;, and a Sponsor </p>
+                  <p className='font-bold sub_heading'>Become a &ldquo;Patron Saint&ldquo;, and a Sponsor </p>
                 </ScrollReveal>
-                <div className='mt-1'>
+                <div className='mt-4'>
                 <ScrollReveal>
-                  <h4 className='font-bold sub_heading'>Can &ldquo;pocket change&ldquo; really make a change?</h4>
+                  <h4 className='font-bold '>Can &ldquo;pocket change&ldquo; really make a change?</h4>
                 </ScrollReveal>
                 <ScrollReveal>
                   <p className='opacity-70'>Social Patronage gives you the opportunity to be a person who gives financial, or other form of support to a person, organization, cause or activity you relish. 
@@ -123,11 +123,11 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
                   <h2 className='font-bold text-xl we'>Social Entrepreneur</h2>
                 </ScrollReveal>
                 <ScrollReveal>
-                  <p className='font-bold'>Help remarkable people achieve their goals</p>
+                  <p className='font-bold sub_heading'>Help remarkable people achieve their goals</p>
                 </ScrollReveal>
-                <div className='mt-1'>
+                <div className='mt-4'>
                 <ScrollReveal>
-                  <h4 className='font-bold sub_heading'>&ldquo;It takes more than funding to run a successful business. It starts with stepping into footprints of those that have walked a path successfully.&ldquo;</h4>
+                  <h4 className='font-bold '>&ldquo;It takes more than funding to run a successful business. It starts with stepping into footprints of those that have walked a path successfully.&ldquo;</h4>
                 </ScrollReveal>
                 <ScrollReveal>
                   <p className='opacity-70'>Social Entrepreneur allows you to interact with small business owners back home, review business proposals and make available funds for projects you resonate with. — Our team will do the due diligence.</p>
@@ -145,11 +145,11 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
                 <h2 className='font-bold text-xl we'>Social Commune</h2>
               </ScrollReveal>
               <ScrollReveal>
-                <p className='font-bold'>Help and Hope go hand in hand.</p>
+                <p className='font-bold sub_heading'>Help and Hope go hand in hand.</p>
               </ScrollReveal>
-              <div className='mt-1'>
+              <div className='mt-4'>
               <ScrollReveal>
-                <h4 className='font-bold sub_heading'>The Place Where &ldquo;together as one&ldquo; Communal Spirit breeds Hope.</h4>
+                <h4 className='font-bold '>The Place Where &ldquo;together as one&ldquo; Communal Spirit breeds Hope.</h4>
               </ScrollReveal>
               <ScrollReveal>
                 <p className='opacity-70'>Social Commune offers safe avenue to network and meet other African diaspora, and share the hope via crowdfunding mega projects back home, all the while supporting in kind-cutting across geographical, geopolitical and religious boundaries.</p>

@@ -10,7 +10,7 @@ export default function WhoAreWe() {
     <section className='flex flex-col  black-color-bg white-color-text p-8 about-container'>
       <ScrollReveal>
         <h1 className=' page_title '>About<span className='we'> Social Insure</span></h1>
-        <p className='text-center'>{describe}</p>
+        <p className='text-center'>Social Insure is a community funded platform for loved ones, ensuring they have needed support they deserve<br/> in a most timely and efficient manner.</p>
       </ScrollReveal>
 
       <ScrollReveal>
