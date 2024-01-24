@@ -34,7 +34,7 @@ export default function Features() {
                 </ScrollReveal>
               </div>
             </div>
-              <img className='h-40' src='/lost.png' alt='lost'/>
+              <img className='h-40' src='/lost.gif' alt='lost'/>
           </div>
         
 
@@ -62,7 +62,7 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
 
                 </div>
               </div>
-              <img className='h-40' src='/health.png' alt='health'/>
+              <img className='h-40' src='/health.gif' alt='health'/>
             </div>
         
 
@@ -88,7 +88,7 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
 
                 </div>
               </div>
-              <img className='h-40' src='/kids.png' alt='kids'/>
+              <img className='h-40' src='/kids.gif' alt='kids'/>
             </div>
        
 
@@ -113,7 +113,7 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
 
                 </div>
               </div>
-              <img className='h-40' src='/patreon.png' alt='patreon'/>
+              <img className='h-40' src='/patreon.gif' alt='patreon'/>
             </div>
         
 
@@ -134,7 +134,7 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
                 </ScrollReveal>
                 </div>
               </div>
-              <img className='h-40' src='/loan.png' alt='loan'/>
+              <img className='h-40' src='/loan.gif' alt='loan'/>
             </div>
         
 
@@ -156,7 +156,7 @@ Let's make healthcare a reality for everyone. 100% of your donation, funds life 
               </ScrollReveal>
               </div>
             </div>
-            <img className='h-40' src='/commune.png' alt='commune'/>
+            <img className='h-40' src='/commune.gif' alt='commune'/>
           </div>
     
 
