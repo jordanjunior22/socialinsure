@@ -17,15 +17,26 @@ export default function HeroSection() {
 
 
   const [email, setEmail] = useState('');
+  const [last_name, setLastName] = useState('');
+  const [first_name, setFirstName] = useState('');
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
 
   const handleEmailSubmit = async (event) => {
     event.preventDefault();
 
     //console.log('Email before fetch:', email);
+    console.log('Email before fetch:', first_name);
+    console.log('Email before fetch:', last_name);
 
     try {
       const response = await fetch('/api/mailchimp', {
@@ -33,7 +44,7 @@ export default function HeroSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, last_name, first_name }),
       });
 
       const data = await response.json();
@@ -120,12 +131,16 @@ export default function HeroSection() {
                                 placeholder='Last Name'
                                 required
                                 className='rounded-md'
+                                value={first_name}
+                                onChange={handleFirstNameChange}
                                 />
                                 <input
                                 type='text'
                                 placeholder='First Name'
                                 required
                                 className='rounded-md'
+                                value={last_name}
+                                onChange={handleLastNameChange}
                                 />
                               </div>
                               <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>

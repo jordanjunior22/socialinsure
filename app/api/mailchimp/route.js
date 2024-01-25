@@ -4,7 +4,10 @@ export async function POST(Request){
     const serverPrefix = process.env.MAILCHIMP_SERVER_PREFIX;
   
     const data = await Request.json();
-    const {email} = data;
+    const { email, last_name, first_name } = data;
+    console.log(email);
+    console.log(last_name);
+    console.log(first_name);
   
     const client = require("@mailchimp/mailchimp_marketing");
     client.setConfig({
@@ -14,9 +17,13 @@ export async function POST(Request){
   
     const run = async () => {
       try {
-        const response = await client.lists.addListMember("50063a05c1", {
+        const response = await client.lists.addListMember("3700b1361d", {
           email_address: email,
           status: "subscribed",
+          merge_fields: { 
+            FNAME: first_name,
+            LNAME: last_name,
+        },
         });
         console.log(response);
         return true; // Indicate successful API call
@@ -32,6 +39,6 @@ export async function POST(Request){
         return Response.json({ message: "Already Subscribed" });
     } 
     else {
-        return Response.json({ error: "An error occurred while subscribing the email" });
+        return Response.json({ message: "An error occurred while subscribing the email" });
     }
   }

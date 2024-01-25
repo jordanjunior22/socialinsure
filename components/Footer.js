@@ -86,11 +86,7 @@ export default function Footer() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-  
-        console.log('Name:', name);
-        console.log('Email:', email);
-        console.log('Message:', message);
-  
+
         try {
           const response = await fetch('/api/email', {
             method: 'POST',
@@ -99,19 +95,19 @@ export default function Footer() {
             },
             body: JSON.stringify({ name, email, message }),
           });
-    
+
           if (response.ok) {
-            alert('Form submission successful!');
+            alert('Sending Successful...');
             // Reset form fields
             setName('');
             setEmail('');
             setMessage('');
           } else {
-            alert('An error occurred while submitting the form.');
+            alert('Error Sending...');
           }
         } catch (error) {
           console.error(error);
-          alert('An error occurred while submitting the form.');
+          alert('Error Sending...');
         }
       };
 
