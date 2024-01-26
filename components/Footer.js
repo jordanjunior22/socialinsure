@@ -7,6 +7,9 @@ import {TfiEmail} from 'react-icons/tfi'
 import {BsFacebook, BsTwitter} from 'react-icons/bs'
 import {FaInstagram} from 'react-icons/fa'
 import { BsTiktok } from 'react-icons/bs'
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Footer() {
   const [showPopup, setShowPopup] = useState(false);
@@ -67,15 +70,15 @@ export default function Footer() {
   
         // Optionally, you can show a success message to the user
         if (data.message === 'Email subscribed successfully') {
-          // alert('Subscribed successfully!');
+          toast("Subscribed Successfully...");
           setModalOpen(false);
           setShowPopup(true);
           setEmail('');
         } else if (data.message === 'Already Subscribed') { 
-          alert('Email is already subscribed.'); 
+          toast('Email is already subscribed.'); 
         }
           else {
-          alert('An error occurred. Please try again.');
+            toast('An error occurred. Please try again.');
         }
       } catch (error) {
         console.error('Error:', error);
@@ -97,13 +100,13 @@ export default function Footer() {
           });
 
           if (response.ok) {
-            alert('Sending Successful...');
+            toast("Send Successful...");
             // Reset form fields
             setName('');
             setEmail('');
             setMessage('');
           } else {
-            alert('Error Sending...');
+            toast("Send Failed...");
           }
         } catch (error) {
           console.error(error);
@@ -117,6 +120,7 @@ export default function Footer() {
                 isOpen={showPopup} 
                 onClose={() => setShowPopup(false)}
             />
+            
         <div className='w-1/2 black-color-bg left_footer p-6'>
             <div className='p-8 flex justify-start black-color-bg white-color-text items-end '>
                 <div className='logo-container'>
@@ -133,10 +137,23 @@ export default function Footer() {
                 </div>
             </div>
             <div className='p-10 flex justify-center white-color-bg black-color-text rounded-tl rounded-tr'>
-            <button onClick={openModal} className='cta-button big-cta '>Join The Waiting List</button>
+            <motion.button onClick={openModal} className='cta-button big-cta' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>Join The Waiting List</motion.button>
                       {isModalOpen && (
                       <div className={`modal-overlay z-50 ${isModalOpen ? 'active' : ''}`}>
-                        <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
+                        <motion.div  className={`modal relative ${isModalOpen ? 'active' : ''}`}
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{
+                          duration: 0.3,
+                          ease: [0, 0.71, 0.2, 1.01],
+                          scale: {
+                          type: "spring",
+                          damping: 5,
+                          stiffness: 100,
+                          restDelta: 0.001
+                          }
+                           }}
+                        >
                           <button className='px-2 hover:bg-red-800 hover:text-white absolute left-5 top-5 border' onClick={closeModal}>X</button>
                           <div className='flex items-center justify-center flex-col '>
                           <p className='w-full text-center something'>
@@ -174,7 +191,7 @@ export default function Footer() {
                               </div>
 
                           </form>
-                        </div>
+                        </motion.div>
                       </div>
                     )}
             </div>
@@ -249,11 +266,11 @@ export default function Footer() {
                     onChange={(e) => setMessage(e.target.value)}
                     
                     />
-                <button type='submit' className='cta-button mt-5'>Send Message</button>
+                <motion.button type='submit' className='cta-button mt-5' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>Send Message</motion.button>
             </form>
             
         </div>
-
+        <ToastContainer />
     </section>
   )
 }

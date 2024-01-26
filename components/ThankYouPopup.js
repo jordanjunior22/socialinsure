@@ -1,4 +1,5 @@
 import { useState ,useEffect } from 'react';
+
 const ThankYouPopup = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
     const [isLoading, setIsLoading] = useState(true);

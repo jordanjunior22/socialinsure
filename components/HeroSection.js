@@ -3,6 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react';
 import ThankYouPopup from './ThankYouPopup';
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  
 export default function HeroSection() {
   const [SideNavOpen, setSideNavOpen] = useState(false);
@@ -35,8 +38,8 @@ export default function HeroSection() {
     event.preventDefault();
 
     //console.log('Email before fetch:', email);
-    console.log('Email before fetch:', first_name);
-    console.log('Email before fetch:', last_name);
+    //console.log('Email before fetch:', first_name);
+    //console.log('Email before fetch:', last_name);
 
     try {
       const response = await fetch('/api/mailchimp', {
@@ -52,15 +55,15 @@ export default function HeroSection() {
 
       // Optionally, you can show a success message to the user
       if (data.message === 'Email subscribed successfully') {
-        // alert('Subscribed successfully!');
+        toast('Subscribed Successfully...');
         setModalOpen(false);
         setShowPopup(true);
         setEmail('');
       } else if (data.message === 'Already Subscribed') { 
-        alert('Email is already subscribed.'); 
+        toast('Email is already subscribed.'); 
       }
         else {
-        alert('An error occurred. Please try again.');
+          toast('An error occurred. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -104,7 +107,7 @@ export default function HeroSection() {
                   </div>
 
                   <div className='nav-links'>
-                    <button className='cta-button' onClick={openModal}>Get Notified</button>
+                    <motion.button className='cta-button' onClick={openModal} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>Get Notified</motion.button>
                   </div>
 
                 </div>
@@ -113,11 +116,24 @@ export default function HeroSection() {
                     <h2 className='font-bold text-lg'>Community Support Made Easy</h2>
                     <p className='des'>{description}</p>
                     <div className='flex gap-10 items-center '>
-                      <button onClick={openModal} className='cta-button big-cta'>Join The Waiting List</button>
+                      <motion.button onClick={openModal} className='cta-button big-cta' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>Join The Waiting List</motion.button>
                       {isModalOpen && (
                       <div className={`modal-overlay z-50 ${isModalOpen ? 'active' : ''}`}>
-                        <div className={`modal relative ${isModalOpen ? 'active' : ''}`}>
-                          <button className='px-2 hover:bg-red-800 hover:text-white absolute left-5 top-5 border' onClick={closeModal}>X</button>
+                        <motion.div className={`modal relative ${isModalOpen ? 'active' : ''}`}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0, 0.71, 0.2, 1.01],
+                          scale: {
+                            type: "spring",
+                            damping: 5,
+                            stiffness: 100,
+                            restDelta: 0.001
+                          }
+                        }}
+                        >
+                          <motion.button className='px-2 hover:bg-red-800 hover:text-white absolute left-5 top-5 border' onClick={closeModal} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>X</motion.button>
                           <div className='flex items-center justify-center flex-col '>
                             <p className='w-full text-center something'>
                             Something really cool is coming</p>
@@ -158,7 +174,7 @@ export default function HeroSection() {
                               </div>
 
                           </form>
-                        </div>
+                        </motion.div>
                       </div>
                     )}
 
@@ -167,6 +183,7 @@ export default function HeroSection() {
                 
             </div>
         </div>
+        <ToastContainer />
     </section>
   )
 }
