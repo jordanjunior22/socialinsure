@@ -56,7 +56,7 @@ export default function Features() {
                   
                   <ScrollReveal>
                     <p className='opacity-70'>Social Health allows you to meet a patient, understand their story and decide if you can support. Your donation directly funds life-changing healthcare.<br/>
-Let's make healthcare a reality for everyone. 100% of your donation, funds life <br/> — changing health needs.
+Let&apos;s make healthcare a reality for everyone. 100% of your donation, funds life <br/> — changing health needs.
 — We prove it by being radically transparent.</p>
                   </ScrollReveal>
 

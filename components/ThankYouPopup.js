@@ -1,16 +1,20 @@
 import { useState ,useEffect } from 'react';
 
 const ThankYouPopup = ({ isOpen, onClose }) => {
-    if (!isOpen) return null;
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        if (!isOpen) return; // Do nothing if not open
+
+        // Rest of your effect logic here
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 3000); // Adjust the timeout duration as needed
+        }, 3000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [isOpen]); // Dependency array includes isOpen to react to its changes
+
+    if (!isOpen) return null;
     
 
     return (
