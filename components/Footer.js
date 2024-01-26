@@ -81,8 +81,8 @@ export default function Footer() {
             toast('An error occurred. Please try again.');
         }
       } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        //console.error('Error:', error);
+        toast('An error occurred. Please try again.');
       }
     };
   
@@ -109,8 +109,8 @@ export default function Footer() {
             toast("Send Failed...");
           }
         } catch (error) {
-          console.error(error);
-          alert('Error Sending...');
+          //console.error(error);
+          toast('Error Sending...');
         }
       };
 

@@ -5,9 +5,9 @@ export async function POST(Request){
   
     const data = await Request.json();
     const { email, last_name, first_name } = data;
-    console.log(email);
-    console.log(last_name);
-    console.log(first_name);
+    //console.log(email);
+    //console.log(last_name);
+    //console.log(first_name);
   
     const client = require("@mailchimp/mailchimp_marketing");
     client.setConfig({
@@ -25,7 +25,7 @@ export async function POST(Request){
             LNAME: last_name,
         },
         });
-        console.log(response);
+        //console.log(response);
         return true; // Indicate successful API call
       } catch (error) {
         console.error(error);
