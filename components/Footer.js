@@ -28,7 +28,7 @@ export default function Footer() {
 
     const GoEmail = () => {
         // Redirect the user to the specified link
-            window.location.href ='mailto:pchhservicesllc@gmail.com';
+            window.location.href ='mailto:socailinsure.org@gmail.com';
       };
       const GoFacebook = () => {
         // Redirect the user to the specified link
