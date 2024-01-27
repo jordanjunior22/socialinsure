@@ -32,19 +32,19 @@ export default function Footer() {
       };
       const GoFacebook = () => {
         // Redirect the user to the specified link
-        window.open('https://www.facebook.com/profile.php?id=100083733096698', '_blank'); // Replace with your desired link
+        window.open('https://www.facebook.com', '_blank'); // Replace with your desired link
       };
       const GoInstagram = () => {
         // Redirect the user to the specified link
-        window.open('https://www.instagram.com/pchhservicesllc/', '_blank'); // Replace with your desired link
+        window.open('https://www.instagram.com', '_blank'); // Replace with your desired link
       };
         const GoTwitter = () => {
         // Redirect the user to the specified link
-        window.open('https://twitter.com/pchhservicesllc', '_blank'); // Replace with your desired link
+        window.open('https://twitter.com', '_blank'); // Replace with your desired link
       };
       const GoTiktok = () => {
         // Redirect the user to the specified link
-        window.open('https://www.tiktok.com/@pchhservicesllc', '_blank'); // Replace with your desired link
+        window.open('https://www.tiktok.com', '_blank'); // Replace with your desired link
       };
 
     const handleEmailChange = (event) => {
