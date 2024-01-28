@@ -19,7 +19,7 @@ export default function Features() {
         <div className='flex items-center justify-between border border-gray-200 box w-3/4 p-4 white-color-bg gap-3'>
             <div className='flex flex-col items-start '>
               <ScrollReveal>
-                <h2 className='font-bold text-xl we'>Social Life</h2>
+                <h2 className='font-bold text-xl we'>Social Well-being</h2>
               </ScrollReveal>
               <ScrollReveal>
                 <p className='font-bold sub_heading'>Joining Hands To Help Bereaved Families</p>
@@ -27,7 +27,7 @@ export default function Features() {
               <div className='mt-4'>
                 <ScrollReveal><h4 className='font-bold '>&apos;Give a token, Help A Lot More&apos;</h4></ScrollReveal>
                 <ScrollReveal>
-                  <p className='opacity-70'>Social Life allows you to support Living relatives of a dead loved ones.
+                  <p className='opacity-70'>
                   Social Life allows grieving families to enjoy support from the community. 
                   The objective is to bring family members living in the diaspora under an umbrella, in order to reduce donations to $1.25 per adult, and $0.75 per minor relative.
                   <br/>— No more crucifying financial burdens after losing a loved one.</p>
