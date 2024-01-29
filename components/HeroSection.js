@@ -40,6 +40,10 @@ export default function HeroSection() {
     //console.log('Email before fetch:', email);
     //console.log('Email before fetch:', first_name);
     //console.log('Email before fetch:', last_name);
+    if (!email.trim() || !first_name.trim() || !last_name.trim()) {
+      toast('Please fill in all required fields: First Name, Last Name, and Email.');
+      return;
+    }
 
     try {
       const response = await fetch('/api/mailchimp', {

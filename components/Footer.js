@@ -15,8 +15,10 @@ export default function Footer() {
   const [showPopup, setShowPopup] = useState(false);
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
-    const [email, setEmail] = useState('');
     const [isModalOpen, setModalOpen] = useState(false);
+    const [email, setEmail] = useState('');
+    const [last_name, setLastName] = useState('');
+    const [first_name, setFirstName] = useState('');
 
     const openModal = () => {
       setModalOpen(true);
@@ -50,11 +52,24 @@ export default function Footer() {
     const handleEmailChange = (event) => {
       setEmail(event.target.value);
     };
+    const handleLastNameChange = (event) => {
+      setLastName(event.target.value);
+    };
+    const handleFirstNameChange = (event) => {
+      setFirstName(event.target.value);
+    };
+  
   
     const handleEmailSubmit = async (event) => {
       event.preventDefault();
   
-      console.log('Email before fetch:', email);
+      //console.log('Email before fetch:', email);
+      //console.log('Email before fetch:', first_name);
+      //console.log('Email before fetch:', last_name);
+      if (!email.trim() || !first_name.trim() || !last_name.trim()) {
+        toast('Please fill in all required fields: First Name, Last Name, and Email.');
+        return;
+      }
   
       try {
         const response = await fetch('/api/mailchimp', {
@@ -62,7 +77,7 @@ export default function Footer() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email, last_name, first_name }),
         });
   
         const data = await response.json();
@@ -70,7 +85,7 @@ export default function Footer() {
   
         // Optionally, you can show a success message to the user
         if (data.message === 'Email subscribed successfully') {
-          toast("Subscribed Successfully...");
+          toast('Subscribed Successfully...');
           setModalOpen(false);
           setShowPopup(true);
           setEmail('');
@@ -82,7 +97,7 @@ export default function Footer() {
         }
       } catch (error) {
         //console.error('Error:', error);
-        toast('An error occurred. Please try again.');
+        alert('An error occurred. Please try again.');
       }
     };
   
@@ -168,12 +183,16 @@ export default function Footer() {
                                 placeholder='Last Name'
                                 required
                                 className='rounded-md'
+                                value={last_name}
+                                onChange={handleLastNameChange}
                                 />
                                 <input
                                 type='text'
                                 placeholder='First Name'
                                 required
                                 className='rounded-md'
+                                value={first_name}
+                                onChange={handleFirstNameChange}
                                 />
                               </div>
                               <div className='flex input-email-res-footer h-9 justify-center items-center mt-2 mobile-respons- gapflex'>
@@ -212,12 +231,16 @@ export default function Footer() {
                             placeholder='Last Name'
                             required
                             className='rounded'
+                            value={last_name}
+                            onChange={handleLastNameChange}
                             />
                         <input
                             type='text'
                             placeholder='First Name'
                             required
                             className='rounded'
+                            value={first_name}
+                            onChange={handleFirstNameChange}
                             />
                       </div>
                       <div className='flex input-email-res-footer h-9 justify-center items-center mobile-respons- gapflex'>
